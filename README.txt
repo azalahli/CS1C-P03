@@ -1,14 +1,14 @@
 @author Myron Pow
 project folder:
-azalahli-project02/
+azalahli-project03/
 
 Description:
 
-src/subsetsum/Sublist.java
-	Class that implements subsets as sublists
-src/subsetsum/GroceriesFileReader.java
-	Class that parses a file, and returns an arraylist of doubles
-src/subsetsum/SubsetSum.java
-	Class that takes an arraylist of positive doubles and a target, and finds a set closest to target
+src/stacks/Navigator.java
+	Class that implements a browser navigator simulator
+src/stacks/StackList.java
+	Class that implements stacks as a singly linked list of nodes
 resources/RUN.txt
-	console output of ShoppingBag.java
+	console output of BrowserNavigation.java
+README.txt
+	description of files submitted
