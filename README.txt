@@ -1,8 +1,14 @@
-// TODO: For every project create a README file at the top-level directory of 
-//       your project. Your README must include a list of .java files you are 
-//       submitting and a brief description of each. You may ignore IDE specific 
-//       files such as .gitignore 
+@author Myron Pow
+project folder:
+azalahli-project02/
 
-// NOTE: Alternatively you can create this file in Markdown format. 
-//       See the tutorial:
-//       https://guides.github.com/features/mastering-markdown/
+Description:
+
+src/subsetsum/Sublist.java
+	Class that implements subsets as sublists
+src/subsetsum/GroceriesFileReader.java
+	Class that parses a file, and returns an arraylist of doubles
+src/subsetsum/SubsetSum.java
+	Class that takes an arraylist of positive doubles and a target, and finds a set closest to target
+resources/RUN.txt
+	console output of ShoppingBag.java
