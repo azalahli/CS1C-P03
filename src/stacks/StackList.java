@@ -10,7 +10,7 @@ import java.util.NoSuchElementException;
 
 public class StackList<E> implements Iterable<E> {
     /**
-     *Private Node class for implementation of abstract StackList
+     *private Node class for implementation of abstract StackList
      */
     private class Node{
         Node next;
@@ -22,7 +22,7 @@ public class StackList<E> implements Iterable<E> {
     }
 
     /**
-     * Private StackListIterator, which iterates through the stack
+     * private StackListIterator, which iterates through the stack
      */
     private class StackListIterator implements Iterator<E>{
         protected Node currentTop = top;
@@ -50,18 +50,29 @@ public class StackList<E> implements Iterable<E> {
         }
     }
 
-    /**
+    /*
      * Beginning of StackList
      */
+    /**
+     * name of stacklist
+     */
     private String name;
+    /**
+     * node on the top of the stack
+     */
     private Node top;
+    /**
+     * size of the stack
+     */
+    private int size;
 
     /**
      * Constructor that sets default values of empty stacklist
      */
-    Stacklist(){
+    StackList(){
         name = "";
         top = null;
+        size = 0;
     }
 
     /**
@@ -76,6 +87,7 @@ public class StackList<E> implements Iterable<E> {
         Node newTop = new Node(input);
         newTop.next = top;
         top = newTop;
+        size++;
     }
 
     /**
@@ -83,11 +95,12 @@ public class StackList<E> implements Iterable<E> {
      * @return node from top of stack
      */
     public Node pop(){
-        if(top == null){
+        if(isEmpty()){
             return null;
         }
         Node popTop = top;
         top = top.next;
+        size--;
         return popTop;
 
     }
@@ -97,10 +110,39 @@ public class StackList<E> implements Iterable<E> {
      * @return data stored in the top node
      */
     public E peek(){
-        if(top == null){
+        if(isEmpty()){
             return null;
         }
         return top.data;
+    }
+
+    /**
+     *Checks for Empty Stack
+     * @return boolean value on stack state
+     */
+    public boolean isEmpty(){
+        return (top == null);
+    }
+
+    /**
+     *Returns size of stack
+     * @return int = number of elements in stack
+     */
+    public int size(){
+        return size;
+    }
+
+    /**
+     *Iterates along stack, and takes all data into a string
+     * @return one string for the entire stack
+     */
+    public String toString(){
+        String output = name +" contains " + size + " links [";
+        for( Node i = top; i != null; i = i.next){
+            output += i.data + " ";
+        }
+        output += "]";
+        return output;
     }
 
     /**
@@ -111,5 +153,21 @@ public class StackList<E> implements Iterable<E> {
         return new StackListIterator();
     }
 
+    /**
+     * Pops all values out of stack.
+     */
+    public void clear(){
+        for(Node i = top; i != null; i = i.next){
+            this.pop();
+        }
+    }
+
+    /**
+     * mutator for name field
+     * @param input is the name of the stacklist
+     */
+    public void setName(String input){
+        name = input;
+    }
 
 }
