@@ -19,6 +19,11 @@ public class Navigator {
     StackList<String> forwardLinks;
 
     /**
+     * String used to store and set after all things are popped from a stack
+     */
+    String lastString ="";
+
+    /**
      * Default constructor for a navigator object
      * Uses literals for the two stack names
      */
@@ -49,9 +54,15 @@ public class Navigator {
             System.out.println("WARNING: BACK LINK NOT FOUND");
         }
         if(!backLinks.isEmpty()){
+            if(backLinks.size() == 1){
+                lastString = currentLink;
+            }
             forwardLinks.push(currentLink);
             this.currentLink = this.backLinks.peek();
             backLinks.pop();
+            if(backLinks.size() <= 0){
+                currentLink = lastString;
+            }
         }
     }
 
@@ -63,11 +74,18 @@ public class Navigator {
             System.out.println("WARNING: FORWARD LINK NOT FOUND");
         }
         if(!forwardLinks.isEmpty()){
+            if(forwardLinks.size() == 1){
+                lastString = currentLink;
+            }
             backLinks.push(currentLink);
             this.currentLink = this.forwardLinks.peek();
             forwardLinks.pop();
+            }
+        if(forwardLinks.size() <= 0){
+            currentLink = lastString;
         }
     }
+
 
     /**
      * accessor method for the current link
