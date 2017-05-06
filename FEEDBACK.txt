@@ -1,0 +1,40 @@
+FEEDBACK:
+
+-10% late submission
+
+
+Excellent implementation of data structures utilizing object 
+   oriented design via StackList!
+
+
+-0 Why do you have a null object on top of the stack?
+   See sample output 1 below.
+   
+-Bita.
+
+
+
+sample output 1:
+At line #1: link www.yahoo.com
+Current Link: www.yahoo.com
+
+BackLinks contains 1 links [ ,]
+
+ForwardLinks contains 0 links []
+
+
+At line #2: link www.youtube.com
+Current Link: www.youtube.com
+
+BackLinks contains 2 links [www.yahoo.com , ,]
+
+ForwardLinks contains 0 links []
+
+
+At line #3: back
+Current Link: www.yahoo.com
+
+BackLinks contains 1 links [ ,]
+
+ForwardLinks contains 1 links [www.youtube.com ,]
+...
